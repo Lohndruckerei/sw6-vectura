@@ -13,6 +13,7 @@ Shopware-6.7-Plugin der Lohndruckerei (Arbeitsname). Vectura erweitert den Shopw
 Konzept, Analyse der Ist-Kosten und Fahrplan: [docs/KONZEPT.md](docs/KONZEPT.md) ·
 technische Umsetzung: [docs/UMSETZUNG.md](docs/UMSETZUNG.md) ·
 Liefer-Countdown und Termine: [docs/TERMINE.md](docs/TERMINE.md) ·
+Logistikpauschale (Modell D): [docs/LOGISTIKPAUSCHALE.md](docs/LOGISTIKPAUSCHALE.md) ·
 Backend/Frontend und Vertrag: [docs/ENTWICKLUNG.md](docs/ENTWICKLUNG.md)
 
 ```

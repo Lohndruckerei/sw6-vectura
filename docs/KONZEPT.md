@@ -1,6 +1,12 @@
 # Vectura – Versand-, Verpackungs- und Servicekosten (Konzept)
 
-Stand: 07.11.2026 · Status: **Vorschlag, Entscheidungen offen** (Abschnitt 9)
+Stand: 07.11.2026 · Status: **Modell D entschieden** (Details und Vorschläge: [LOGISTIKPAUSCHALE.md](LOGISTIKPAUSCHALE.md)),
+Termine als Modul in Vectura ([TERMINE.md](TERMINE.md)); weitere offene Punkte in Abschnitt 9
+
+> **Entscheidungen vom 07.11.2026:** Die Versandpauschale bleibt, der Verpackungszuschlag wird sichtbar aufgeschlagen.
+> Die tatsächlichen Versand- und Servicekosten (XML, Mail, Rechnungsabgleich im Workflow-Plugin) werden ausgewertet.
+> Mensura schlägt daraus eine **unsichtbare Logistikpauschale** je Option vor und rechnet sie ein (Ziel: 20–30 % Marge).
+> Liefer-Countdown und Terminplanung werden als Modul „Termine“ in Vectura gebaut.
 
 *Vectura* (lat. „Fracht, Fuhrlohn“) ist der Arbeitsname. Weitere Namen stehen in Abschnitt 10.
 Technisch: Plugin `LdVectura`, Namespace `Lohndruckerei\Vectura`, Tabellen `ld_vectura_*`,
@@ -168,8 +174,9 @@ Ein Comdatek-Auftrag entspricht dabei etwa einer Shop-Bestellung.
 | **Gesamt** | **6.767,20 €** | **2.481,00 €** | **25 (10 %)** | **497,10 €** |
 
 - In Summe deckt die heutige Pauschale die Comdatek-Kosten. Zwei Drittel der Erlöse stammen aber aus
-  Aluverbund-Aufträgen, für die Comdatek nichts berechnet. **Fällt die Alu-Kondition weg, kippt die
-  Rechnung.**
+  Aluverbund-Aufträgen, für die Comdatek nichts berechnet. Fällt die Alu-Kondition weg, sinkt die Deckung deutlich.
+  Die Nachrechnung mit 500 Aufträgen ergibt dann etwa 2,3 statt 3,1, also immer noch gedeckt; siehe
+  [LOGISTIKPAUSCHALE.md](LOGISTIKPAUSCHALE.md).
 - Unterdeckung entsteht fast nur bei **Sperrgut (Hartschaum, Stadur, Canvas)** und **Express ohne
   Aluverbund**.
 - Nicht enthalten sind die eigene Verpackung, die interne Folienproduktion (GLS/DPD-Kosten fehlen noch)
@@ -399,10 +406,9 @@ DPD c2, DHL c3, UPS c4).
 
 ## 9. Offene Entscheidungen und benötigte Unterlagen
 
-1. **Kundenpreis-Modell** A, B, C oder D (Empfehlung D, Start mit A + Dashboard).
-2. **Logistikpauschale:** Bezugsgröße (% Warenwert, €/m², €/Position), Zeitraum (Quartal?), Zielmarge
-   (25 %?), Kundenpauschale verrechnen ja/nein; auch für Nicht-Mensura-Artikel?
-   Mehrquellen-Zuschlag damit 0 €?
+1. ~~Kundenpreis-Modell~~ → **D entschieden** (07.11.2026).
+2. **Logistikpauschale:** Anrechnung der sichtbaren Erlöse, Zeitraum, Senkung sichtbarer Gebühren → offene Fragen in
+   [LOGISTIKPAUSCHALE.md](LOGISTIKPAUSCHALE.md) Abschnitt 7; Zielmarge 20–30 % entschieden.
 3. **„24h Express“:** ersetzen durch „Zustellung bis 10 Uhr“ (nur interne Produktion) oder streichen?
 4. **Format-Staffel:** Stufen bestätigen (Abschnitt 2.1); einmal je Bestellung oder je Sendung?
 5. **Mindestaufschlag Produktionszeit** je Position (Vorschlag: so hoch wie der Express-EK, z. B. 15 €).

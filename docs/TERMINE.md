@@ -1,6 +1,6 @@
 # Liefertermin, Countdown und Terminplanung (Vorschlag)
 
-Stand: 07.11.2026 · Status: **Vorschlag**, gehört zu [KONZEPT.md](KONZEPT.md) und [UMSETZUNG.md](UMSETZUNG.md)
+Stand: 07.11.2026 · Status: **Ort entschieden: Modul „Termine“ in Vectura**; Details noch Vorschlag; gehört zu [KONZEPT.md](KONZEPT.md) und [UMSETZUNG.md](UMSETZUNG.md)
 
 ## 1. Anforderung
 
