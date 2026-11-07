@@ -1,0 +1,668 @@
+// GENERIERT aus ld-admin-design 1.0.0 (cef5da4) – nicht hier ändern, sondern in ~/projekte/ld-admin-design/vorlage und ./sync.sh ausführen.
+// Lohndruckerei Admin-Design: A · Hafen, B · Druckbogen, C · Kompass.
+// Alle Regeln hängen an .lv-design / .lv-design--{a|b|c}; Shopware-Klassen werden nur
+// innerhalb dieses Wurzelelements angepasst. Werte und Regeln: DESIGN.md.
+
+$p-text: var(--color-text-primary-default, #1c1c1c);
+$p-text2: var(--color-text-secondary-default, #52667a);
+$p-text3: var(--color-text-tertiary-default, #8a97a6);
+$p-border: var(--color-border-primary-default, #d1d9e0);
+$p-surface: var(--color-elevation-surface-raised, #ffffff);
+$p-sunken: var(--color-background-tertiary-default, #f0f2f5);
+$p-primary: var(--color-interaction-primary-default, #0870ff);
+
+// ---------- Tokens ----------
+.lv-design {
+    --lv-ok: #14802e;
+    --lv-ok-bg: #e1ffe0;
+    --lv-ok-dot: #36d046;
+    --lv-warn: #975a00;
+    --lv-warn-bg: #fff3e3;
+    --lv-warn-dot: #fbaf18;
+    --lv-err: #c20017;
+    --lv-err-bg: #fff2f0;
+    --lv-err-dot: #e2262a;
+    --lv-off: #696a6e;
+    --lv-off-bg: #eef0f4;
+    --lv-off-dot: #{$p-text3};
+}
+
+.lv-design--a {
+    --lv-brand: #57d9a3;
+    --lv-brand-ink: #0e7a52;
+    --lv-accent: #0870ff;
+    --lv-c1: #0870ff;
+    --lv-c2: #633bc6;
+    --lv-c3: #0f9d8f;
+    --lv-c4: #d97706;
+}
+
+.lv-design--b {
+    --lv-brand: #0b6e79;
+    --lv-brand-ink: #0b6e79;
+    --lv-accent: #e5007e;
+    // Druckfarben: Cyan, Magenta, Gelb, Schwarz (Key)
+    --lv-c1: #009fe3;
+    --lv-c2: #e5007e;
+    --lv-c3: #e0a800;
+    --lv-c4: #2b2b33;
+}
+
+.lv-design--c {
+    --lv-brand: #243758;
+    --lv-brand-ink: #243758;
+    --lv-accent: #ff8a00;
+    --lv-c1: #2f80ed;
+    --lv-c2: #8e44ad;
+    --lv-c3: #16a085;
+    --lv-c4: #e67e22;
+}
+
+// ---------- Schalter „Design A | B | C“ ----------
+.lv-design-switch {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+    border: 1px solid $p-border;
+    border-radius: 6px;
+    overflow: hidden;
+    background: $p-surface;
+    font-size: 12px;
+
+    &__label {
+        padding: 0 10px;
+        color: $p-text2;
+        border-right: 1px solid $p-border;
+        line-height: 30px;
+    }
+
+    &__option {
+        min-width: 30px;
+        height: 30px;
+        border: 0;
+        background: none;
+        color: $p-text2;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            background: $p-sunken;
+        }
+
+        &.is--active {
+            background: var(--lv-brand, #{$p-primary});
+            color: #fff;
+        }
+
+        & + & {
+            border-left: 1px solid $p-border;
+        }
+    }
+}
+
+// ---------- Kategorie-Chip ----------
+.lv-chip {
+    --lv-t: var(--lv-c1);
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    & + & {
+        margin-left: 4px;
+    }
+}
+
+.lv-design--a .lv-chip {
+    border-radius: 4px;
+    background: $p-sunken;
+    color: $p-text;
+
+    .lv-chip__icon {
+        color: var(--lv-t);
+    }
+}
+
+.lv-design--b .lv-chip {
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--lv-t) 13%, transparent);
+    color: color-mix(in srgb, var(--lv-t) 72%, #1c1c1c);
+    box-shadow: inset 3px 0 0 var(--lv-t);
+}
+
+.lv-design--c .lv-chip {
+    padding: 0 4px 0 0;
+    background: none;
+    color: $p-text;
+    font-weight: 500;
+
+    .lv-chip__icon {
+        display: none;
+    }
+
+    &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        background: var(--lv-t);
+    }
+}
+
+// ---------- Status ----------
+.lv-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &--ok { background: var(--lv-ok-bg); color: var(--lv-ok); }
+    &--warn { background: var(--lv-warn-bg); color: var(--lv-warn); }
+    &--err { background: var(--lv-err-bg); color: var(--lv-err); }
+    &--off { background: var(--lv-off-bg); color: var(--lv-off); }
+}
+
+.lv-design--a .lv-status {
+    padding: 1px 8px;
+    border-radius: 4px;
+
+    .lv-status__icon {
+        display: none;
+    }
+}
+
+.lv-design--c .lv-status {
+    padding: 0;
+    background: none;
+    color: $p-text;
+    font-weight: 500;
+
+    .lv-status__icon {
+        display: none;
+    }
+
+    &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+
+    &--ok::before { background: var(--lv-ok-dot); }
+    &--warn::before { background: var(--lv-warn-dot); }
+    &--err::before { background: var(--lv-err-dot); }
+    &--off::before { background: var(--lv-off-dot); }
+}
+
+// ---------- Reiter (B horizontal, C vertikal) ----------
+.lv-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 4px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $p-border;
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: -1px;
+        padding: 10px 14px;
+        border: 0;
+        border-bottom: 2px solid transparent;
+        background: none;
+        color: $p-text2;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+        cursor: pointer;
+
+        &:hover {
+            color: $p-text;
+        }
+
+        &.is--active {
+            border-bottom-color: var(--lv-brand);
+            color: var(--lv-brand-ink);
+            font-weight: 600;
+        }
+    }
+
+    &__count {
+        min-width: 20px;
+        padding: 0 7px;
+        border-radius: 99px;
+        background: $p-sunken;
+        color: $p-text2;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 18px;
+        text-align: center;
+    }
+
+    &__item.is--warn &__count {
+        background: var(--lv-warn-bg);
+        color: var(--lv-warn);
+    }
+
+    &__warn {
+        color: var(--lv-warn-dot);
+    }
+
+    &--vertical {
+        position: sticky;
+        top: 12px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 2px;
+        margin: 0;
+        padding: 8px;
+        border: 1px solid $p-border;
+        border-radius: 8px;
+        background: $p-surface;
+
+        .lv-tabs__group {
+            padding: 10px 10px 4px;
+            color: $p-text3;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .lv-tabs__item {
+            width: 100%;
+            margin: 0;
+            padding: 9px 10px;
+            border: 0;
+            border-radius: 6px;
+            color: $p-text;
+            text-align: left;
+
+            .lv-tabs__icon {
+                color: $p-text2;
+            }
+
+            .lv-tabs__count {
+                margin-left: auto;
+            }
+
+            &.is--active {
+                background: color-mix(in srgb, var(--lv-accent) 12%, transparent);
+                color: $p-text;
+
+                .lv-tabs__icon {
+                    color: var(--lv-accent);
+                }
+            }
+        }
+    }
+}
+
+// ---------- Kopfkarte der Detailseite (B, C) ----------
+.lv-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    border: 1px solid $p-border;
+    border-radius: 8px;
+    background: $p-surface;
+
+    &__icon {
+        display: grid;
+        flex: none;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 10px;
+        background: color-mix(in srgb, var(--lv-brand) 14%, transparent);
+        color: var(--lv-brand-ink);
+    }
+
+    &__main {
+        min-width: 0;
+    }
+
+    &__title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+        margin-top: 4px;
+        color: $p-text2;
+        font-size: 13px;
+    }
+
+    &__chips,
+    &__stats {
+        margin-left: auto;
+    }
+
+    &__stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__stat {
+        display: flex;
+        flex-direction: column;
+        color: $p-text2;
+        font-size: 12px;
+
+        b {
+            color: $p-text;
+            font-size: 16px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        &.is--warn b {
+            color: var(--lv-warn);
+        }
+    }
+}
+
+.lv-design--b .lv-header {
+    border-top: 4px solid var(--lv-brand);
+}
+
+// ---------- Detailseite C: Seitennavigation + Inhalt ----------
+.lv-split {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+
+    @media (max-width: 1000px) {
+        grid-template-columns: minmax(0, 1fr);
+
+        .lv-tabs--vertical {
+            position: static;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .lv-tabs__group {
+                display: none;
+            }
+
+            .lv-tabs__item {
+                width: auto;
+            }
+        }
+    }
+}
+
+// ---------- Seiteninhalt über randlosen Listen ----------
+// An den Inhaltsbereich einer Listenseite setzen: Filter, Kennzahlen, Kacheln bekommen 24 px Rand.
+.lv-content {
+    > .lv-filters,
+    > .lv-kpis,
+    > .lv-toolbar,
+    > .lv-tiles,
+    > .sw-pagination {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    > .lv-filters,
+    > .lv-kpis {
+        margin-top: 16px;
+    }
+}
+
+// ---------- Liste: Filterchips (B) ----------
+.lv-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.lv-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border: 1px solid $p-border;
+    border-radius: 99px;
+    background: $p-surface;
+    color: $p-text;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+
+    b {
+        color: $p-text2;
+        font-weight: 600;
+    }
+
+    &.is--active {
+        border-color: var(--lv-brand);
+        background: color-mix(in srgb, var(--lv-brand) 14%, transparent);
+        color: var(--lv-brand-ink);
+    }
+}
+
+// ---------- Liste: Kennzahlen, Werkzeugleiste, Kacheln (C) ----------
+.lv-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+
+    @media (max-width: 1000px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.lv-kpi {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid $p-border;
+    border-radius: 8px;
+    background: $p-surface;
+    color: $p-text;
+    text-align: left;
+    cursor: pointer;
+
+    b {
+        display: block;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.1;
+        font-variant-numeric: tabular-nums;
+    }
+
+    small {
+        color: $p-text2;
+        font-size: 12px;
+    }
+
+    &--all .mt-icon { color: var(--lv-brand-ink); }
+    &--ok .mt-icon { color: var(--lv-ok); }
+    &--warn .mt-icon { color: var(--lv-warn-dot); }
+    &--err .mt-icon { color: var(--lv-err); }
+    &--off .mt-icon { color: $p-text3; }
+
+    &.is--active {
+        border-color: var(--lv-accent);
+        box-shadow: 0 0 0 2px color-mix(in srgb, var(--lv-accent) 20%, transparent);
+    }
+}
+
+.lv-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.lv-seg {
+    display: inline-flex;
+    margin-left: auto;
+    border: 1px solid $p-border;
+    border-radius: 6px;
+    overflow: hidden;
+
+    button {
+        display: flex;
+        padding: 6px 10px;
+        border: 0;
+        background: $p-surface;
+        color: $p-text2;
+        cursor: pointer;
+
+        &.is--active {
+            background: $p-sunken;
+            color: $p-text;
+        }
+    }
+}
+
+.lv-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.lv-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid $p-border;
+    border-radius: 8px;
+    background: $p-surface;
+    color: $p-text;
+    text-align: left;
+    text-decoration: none;
+
+    &:hover {
+        border-color: var(--lv-accent);
+    }
+
+    &.is--inactive {
+        opacity: .65;
+    }
+
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        b {
+            display: block;
+            font-size: 14.5px;
+        }
+
+        small {
+            color: $p-text3;
+            font-size: 12px;
+        }
+    }
+
+    &__status {
+        margin-left: auto;
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 16px;
+        padding-top: 10px;
+        border-top: 1px solid $p-border;
+        color: $p-text2;
+        font-size: 12.5px;
+    }
+}
+
+// ---------- Icon-Kachel, Namenszelle, Hilfsklassen ----------
+.lv-sicon {
+    display: grid;
+    flex: none;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--lv-brand) 14%, transparent);
+    color: var(--lv-brand-ink);
+
+    &--large {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+    }
+
+    &.is--off {
+        background: var(--lv-off-bg);
+        color: $p-text3;
+    }
+}
+
+.lv-namecell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a {
+        font-weight: 600;
+    }
+
+    small {
+        display: block;
+        color: $p-text3;
+        font-size: 12px;
+    }
+}
+
+.lv-muted {
+    color: $p-text3;
+}
+
+// ---------- Leere Zustände ----------
+.lv-empty-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.lv-empty-step {
+    padding: 5px 10px;
+    border: 1px dashed $p-border;
+    border-radius: 6px;
+    color: $p-text2;
+    font-size: 12.5px;
+}
+
+// Design B: Icon leerer Zustände in Markenfarbe (nur im eigenen Wurzelelement)
+.lv-design--b .sw-empty-state__icon,
+.lv-design--b .sw-empty-state .mt-icon {
+    color: var(--lv-brand-ink);
+}

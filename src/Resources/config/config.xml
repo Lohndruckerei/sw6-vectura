@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Administration</title>
+        <title lang="de-DE">Administration</title>
+
+        <input-field type="single-select">
+            <name>adminDesign</name>
+            <label>Default admin design</label>
+            <label lang="de-DE">Standard-Design der Administration</label>
+            <helpText>Applies to all users who have not chosen their own design. Example: B · Druckbogen.</helpText>
+            <helpText lang="de-DE">Gilt für alle Benutzer ohne eigene Wahl. Beispiel: B · Druckbogen.</helpText>
+            <defaultValue>b</defaultValue>
+            <options>
+                <option><id>a</id><name>A · Harbour (close to Shopware)</name><name lang="de-DE">A · Hafen (nah am Shopware-Standard)</name></option>
+                <option><id>b</id><name>B · Print sheet (recommended)</name><name lang="de-DE">B · Druckbogen (empfohlen)</name></option>
+                <option><id>c</id><name>C · Compass (key figures, tiles)</name><name lang="de-DE">C · Kompass (Kennzahlen, Kacheln)</name></option>
+            </options>
+        </input-field>
+    </card>
+</config>
