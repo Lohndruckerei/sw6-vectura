@@ -1,0 +1,31 @@
+{
+  "base": "/bundles/ldvectura/administration/",
+  "entryPoints": {
+    "ld-vectura": {
+      "css": [
+        "/bundles/ldvectura/administration/assets/ld-vectura-Cnz7TI3O.css"
+      ],
+      "dynamic": [
+        "/bundles/ldvectura/administration/assets/index-B5DbIpbd.js",
+        "/bundles/ldvectura/administration/assets/index-CEF0GLar.js",
+        "/bundles/ldvectura/administration/assets/index-BQ4-4IIP.js",
+        "/bundles/ldvectura/administration/assets/index-Cvwe_cjz.js",
+        "/bundles/ldvectura/administration/assets/index-BCmmhgtT.js"
+      ],
+      "js": [
+        "/bundles/ldvectura/administration/assets/ld-vectura-C-be09-b.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.1.0",
+    7,
+    1,
+    0
+  ],
+  "viteServer": null
+}

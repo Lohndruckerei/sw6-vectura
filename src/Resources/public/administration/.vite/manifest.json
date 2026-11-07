@@ -1,0 +1,60 @@
+{
+  "ld-admin-design/component/chip/index.js": {
+    "file": "assets/index-BQ4-4IIP.js",
+    "name": "index",
+    "src": "ld-admin-design/component/chip/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "main.js"
+    ]
+  },
+  "ld-admin-design/component/design-switch/index.js": {
+    "file": "assets/index-B5DbIpbd.js",
+    "name": "index",
+    "src": "ld-admin-design/component/design-switch/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "main.js"
+    ]
+  },
+  "ld-admin-design/component/status/index.js": {
+    "file": "assets/index-CEF0GLar.js",
+    "name": "index",
+    "src": "ld-admin-design/component/status/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "main.js"
+    ]
+  },
+  "ld-admin-design/component/tabs/index.js": {
+    "file": "assets/index-BCmmhgtT.js",
+    "name": "index",
+    "src": "ld-admin-design/component/tabs/index.js",
+    "isDynamicEntry": true
+  },
+  "ld-admin-design/component/transport-chip/index.js": {
+    "file": "assets/index-Cvwe_cjz.js",
+    "name": "index",
+    "src": "ld-admin-design/component/transport-chip/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "main.js"
+    ]
+  },
+  "main.js": {
+    "file": "assets/ld-vectura-C-be09-b.js",
+    "name": "ld-vectura",
+    "src": "main.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "ld-admin-design/component/design-switch/index.js",
+      "ld-admin-design/component/status/index.js",
+      "ld-admin-design/component/chip/index.js",
+      "ld-admin-design/component/transport-chip/index.js",
+      "ld-admin-design/component/tabs/index.js"
+    ],
+    "css": [
+      "assets/ld-vectura-Cnz7TI3O.css"
+    ]
+  }
+}

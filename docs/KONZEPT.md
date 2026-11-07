@@ -349,6 +349,12 @@ Ist-Kosten zurückgerechnet und regelmäßig nachgeführt.
 
 ---
 
+### 6.1 Liefer-Countdown und Terminplanung
+
+Countdown bis zum Annahmeschluss, Produktionsprofile je Lieferant (10–0,5 AT, intern 0,5 AT mit Versand am selben
+Tag), Zeitleiste im Shop sowie Terminverschiebung nach der Bestellung (Workflow-Plugin) werden als Modul „Termine“ in
+Vectura gebaut. Details, Varianten und Rechenregel: [TERMINE.md](TERMINE.md).
+
 ## 7. Sendungen und Versandmitteilungen
 
 | Quelle | Weg | Phase |

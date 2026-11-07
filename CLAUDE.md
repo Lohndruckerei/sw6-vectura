@@ -1,12 +1,14 @@
 # Projekt: sw6-vectura (Shopware 6 Plugin „Vectura“ der Lohndruckerei)
 
 Arbeitsname „Vectura“ – Versand-, Verpackungs- und Servicekosten, Zustelltermine, Sendungen.
-Konzept und offene Entscheidungen: docs/KONZEPT.md (bei Änderungen mitpflegen).
+Konzept und offene Entscheidungen: docs/KONZEPT.md · technische Umsetzung: docs/UMSETZUNG.md ·
+Liefer-Countdown/Terminplanung (Modul „Termine“): docs/TERMINE.md ·
+Backend/Frontend, Branches und Vertrag: docs/ENTWICKLUNG.md (bei Änderungen mitpflegen).
 
 ## Umgebung
-- Shopware 6.7 läuft lokal im Docker-Container "shopware" (Dockware-Image)
-- Dieser Ordner soll im Container eingebunden werden unter:
-  /var/www/html/custom/plugins/LdVectura (noch nicht eingebunden – Container-Neuanlage wie bei Mensura)
+- Shopware 6.7 läuft lokal im Docker-Container "shopware" (Dockware-Image, gesichert als `shopware-backup:2026-11-07-vectura`,
+  vorheriger Container `shopware-vor-vectura`)
+- Dieser Ordner ist im Container eingebunden unter: /var/www/html/custom/plugins/LdVectura
 - Shopware-Befehle im Container, z. B.:
   docker exec shopware bash -c "cd /var/www/html && bin/console plugin:refresh"
 - Shop: http://localhost, Administration: http://localhost/admin

@@ -10,11 +10,14 @@ Shopware-6.7-Plugin der Lohndruckerei (Arbeitsname). Vectura erweitert den Shopw
 - **Sendungen:** Sendungsnummern aus Comdatek-XML und Versandmails, Übernahme in die Shopware-Lieferung,
   Flow-Event für Versandmitteilungen
 
-Konzept, Analyse der Ist-Kosten und Fahrplan: [docs/KONZEPT.md](docs/KONZEPT.md)
+Konzept, Analyse der Ist-Kosten und Fahrplan: [docs/KONZEPT.md](docs/KONZEPT.md) ·
+technische Umsetzung: [docs/UMSETZUNG.md](docs/UMSETZUNG.md) ·
+Liefer-Countdown und Termine: [docs/TERMINE.md](docs/TERMINE.md) ·
+Backend/Frontend und Vertrag: [docs/ENTWICKLUNG.md](docs/ENTWICKLUNG.md)
 
 ```
 Mensura (Positionspreis, Maße, Produktionszeit) ─► Vectura (Bestellung: Versand, Termin, EK)
 LieferLotse (Lieferanten, Eingang) ─► Vectura-Sendungen ─► Flow Builder / Workflow-Plugin
 ```
 
-Status: Konzept + Plugin-Gerüst (v0.1.0), noch nicht im Container eingebunden.
+Status: Konzept + Plugin-Gerüst (v0.1.0), im Container eingebunden (`custom/plugins/LdVectura`), installiert und aktiv.
