@@ -6,6 +6,8 @@ Termine als Modul in Vectura ([TERMINE.md](TERMINE.md)); weitere offene Punkte i
 > **Entscheidungen vom 07.11.2026:** Die Versandpauschale bleibt, der Verpackungszuschlag wird sichtbar aufgeschlagen.
 > Die tatsächlichen Versand- und Servicekosten (XML, Mail, Rechnungsabgleich im Workflow-Plugin) werden ausgewertet.
 > Mensura schlägt daraus eine **unsichtbare Logistikpauschale** je Option vor und rechnet sie ein (Ziel: 20–30 % Marge).
+> **Getrennt gerechnet:** Pauschale und Verpackung decken die eigene Abwicklung, die Logistikpauschale allein die
+> Lieferantenkosten.
 > Liefer-Countdown und Terminplanung werden als Modul „Termine“ in Vectura gebaut.
 
 *Vectura* (lat. „Fracht, Fuhrlohn“) ist der Arbeitsname. Weitere Namen stehen in Abschnitt 10.

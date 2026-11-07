@@ -1,6 +1,6 @@
 {
   "ld-admin-design/component/chip/index.js": {
-    "file": "assets/index-BQ4-4IIP.js",
+    "file": "assets/index-G_hQlATL.js",
     "name": "index",
     "src": "ld-admin-design/component/chip/index.js",
     "isDynamicEntry": true,
@@ -9,7 +9,7 @@
     ]
   },
   "ld-admin-design/component/design-switch/index.js": {
-    "file": "assets/index-B5DbIpbd.js",
+    "file": "assets/index-B8h-teJw.js",
     "name": "index",
     "src": "ld-admin-design/component/design-switch/index.js",
     "isDynamicEntry": true,
@@ -18,7 +18,7 @@
     ]
   },
   "ld-admin-design/component/status/index.js": {
-    "file": "assets/index-CEF0GLar.js",
+    "file": "assets/index-BnTLg5zX.js",
     "name": "index",
     "src": "ld-admin-design/component/status/index.js",
     "isDynamicEntry": true,
@@ -33,7 +33,7 @@
     "isDynamicEntry": true
   },
   "ld-admin-design/component/transport-chip/index.js": {
-    "file": "assets/index-Cvwe_cjz.js",
+    "file": "assets/index-B-haKkg3.js",
     "name": "index",
     "src": "ld-admin-design/component/transport-chip/index.js",
     "isDynamicEntry": true,
@@ -42,7 +42,7 @@
     ]
   },
   "main.js": {
-    "file": "assets/ld-vectura-C-be09-b.js",
+    "file": "assets/ld-vectura-DQOk9lU1.js",
     "name": "ld-vectura",
     "src": "main.js",
     "isEntry": true,
