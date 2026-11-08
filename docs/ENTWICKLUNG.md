@@ -18,8 +18,8 @@ Wie bei Mensura bleibt Vectura **ein Plugin und ein Repository** mit zwei Arbeit
 
 ## Arbeitskopien
 
-- Backend: `~/projekte/sw6-vectura` (im Container eingebunden als `LdVectura`)
-- Frontend: `~/projekte/sw6-vectura-frontend` als `git worktree`, sobald es etwas anzuzeigen gibt (ab Schritt 2F),
+- Backend: `~/projekte/sw6-entwicklung-lohndruckerei/sw6-vectura` (im Container eingebunden als `LdVectura`)
+- Frontend: `~/projekte/sw6-entwicklung-lohndruckerei/sw6-vectura-frontend` als `git worktree`, sobald es etwas anzuzeigen gibt (ab Schritt 2F),
   wie `sw6-mensura-frontend`.
 
 ## Beispielfälle (geplant)

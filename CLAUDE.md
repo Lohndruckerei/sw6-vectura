@@ -6,8 +6,7 @@ Liefer-Countdown/Terminplanung (Modul „Termine“): docs/TERMINE.md ·
 Backend/Frontend, Branches und Vertrag: docs/ENTWICKLUNG.md (bei Änderungen mitpflegen).
 
 ## Umgebung
-- Shopware 6.7 läuft lokal im Docker-Container "shopware" (Dockware-Image, gesichert als `shopware-backup:2026-11-07-vectura`,
-  vorheriger Container `shopware-vor-vectura`)
+- Shopware 6.7 läuft lokal im gemeinsamen Docker-Container "shopware" (Compose, siehe ../CLAUDE.md)
 - Dieser Ordner ist im Container eingebunden unter: /var/www/html/custom/plugins/LdVectura
 - Shopware-Befehle im Container, z. B.:
   docker exec shopware bash -c "cd /var/www/html && bin/console plugin:refresh"
@@ -26,7 +25,7 @@ Backend/Frontend, Branches und Vertrag: docs/ENTWICKLUNG.md (bei Änderungen mit
 - Shopware erweitern, nicht ersetzen: Versandarten, Länder, Regeln, `order_delivery` und Sendungsnummern bleiben
   Shopware-Standard; Vectura berechnet Beträge, Termine und verwaltet Sendungen
 - Unabhängig von Mensura und LieferLotse lauffähig; nur lose koppeln (IDs ohne Fremdschlüssel, Payload, Events)
-- Admin-Design kommt aus ~/projekte/ld-admin-design – dort ändern, nicht lokal:
+- Admin-Design kommt aus ~/projekte/sw6-entwicklung-lohndruckerei/ld-admin-design – dort ändern, nicht lokal:
   `src/Resources/app/administration/src/ld-admin-design/` ist generiert (`./sync.sh vectura`, Präfix `lv-`,
   Store `lvDesign`, Mixin `lv-design`); Regeln in dessen DESIGN.md
 - Jedes Feld mit Hilfetext und Praxisbeispiel, Erklärkarten, Simulator statt Rätselraten
