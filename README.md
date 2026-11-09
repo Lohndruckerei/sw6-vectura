@@ -1,6 +1,8 @@
 # Vectura – Versand, Verpackung und Sendungen für Shopware 6
 
-Shopware-6.7-Plugin der Lohndruckerei (Arbeitsname). Vectura erweitert den Shopware-Versand um:
+Shopware-6.7-Plugin der Lohndruckerei (Arbeitsname). **In Entwicklung:** Bisher gibt es nur Konzept und
+Plugin-Gerüst; die folgenden Funktionen sind geplant und noch nicht nutzbar (im Admin noch kein Menüeintrag).
+Vectura soll den Shopware-Versand erweitern um:
 
 - **Kundenpreise:** Pauschale je Zone (DE, Inseln, AT …), Format-/Verpackungszuschlag nach der
   längsten Seite, Mehrquellen-Zuschlag, Zusatzservices

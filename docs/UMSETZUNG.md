@@ -90,7 +90,8 @@ Shopware die Gesamtsumme aus Positionen **und** Versandkosten neu.
 
 - **Mensura-Artikel:** Mensura löst nach jeder Berechnung `MensuraPriceCalculatedEvent` aus (in Mensura INTEGRATION 5
   geplant, **kleiner Schritt in Mensura nötig**). Vectura hört darauf und ergänzt eine Rechenweg-Zeile „Logistik“
-  (VK) je nach Bezugsgröße (% Warenwert, €/m² oder €/Position). Damit stimmen Produktseite, Warenkorb und
+  (VK) je nach Bezugsgröße (% Warenwert, €/m² oder €/Position), und zwar **nach dem Mindestpreis**, vor
+  Kundengruppen-Aufschlag und Rundung (siehe [LOGISTIKPAUSCHALE.md](LOGISTIKPAUSCHALE.md) 3.4). Damit stimmen Produktseite, Warenkorb und
   Schnappschuss automatisch überein.
 - **Andere Artikel:** In Phase 1 kein Eingriff in den Preis; das Admin zeigt den empfohlenen Aufschlag je Kategorie
   zum Einpflegen. Später optional ein Preis-Prozessor für Kategorien.
@@ -108,8 +109,11 @@ Shopware die Gesamtsumme aus Positionen **und** Versandkosten neu.
 - Fertigstellung je Position: `payload.ldDeliveryDate` von Mensura bzw. Shopware-Lieferzeit des Produkts.
 - Gruppe = späteste Fertigstellung ihrer Positionen, + Laufzeit der Quelle für die Zone (Arbeitstage, Feiertage aus
   Vectura-Einstellungen; Vorgabe: Werte aus `LdMensura.config.workingDays/holidays` übernehmen, wenn vorhanden).
-- Ergebnis je Gruppe `{earliest, latest}` in `lvShipping`; Bestellung = späteste Gruppe. Wird an LieferLotse
-  über das Zusatzfeld `ld_delivery_date` der Bestellung gereicht (dort bereits vorgesehen).
+- Ergebnis je Gruppe `{earliest, latest}` in `lvShipping`; Bestellung = späteste Gruppe.
+- **Übergabe an LieferLotse:** Für Lieferanten gelten die **Positionstermine** (`payload.ldDeliveryDate` der
+  Positionen des jeweiligen Lieferanten). LieferLotse verwendet diesen Termin **vor** dem Bestelltermin (`DeliveryDateResolver`).
+  Vectura setzt am Bestellkopf (`order.customFields.ld_delivery_date`) den spätesten Termin nur als Gesamtinfo und
+  Rückfall für Positionen ohne eigenen Termin; sonst bekämen alle Lieferanten den Termin der langsamsten Sendung.
 
 ---
 

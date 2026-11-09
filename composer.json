@@ -1,6 +1,6 @@
 {
     "name": "lohndruckerei/ld-vectura",
-    "description": "Vectura – Versand-, Verpackungs- und Servicekosten, Zustelltermine und Sendungen",
+    "description": "Vectura – Versand-, Verpackungs- und Servicekosten, Zustelltermine und Sendungen (in Entwicklung)",
     "type": "shopware-platform-plugin",
     "version": "0.1.0",
     "license": "proprietary",
@@ -25,8 +25,8 @@
             "en-GB": "Vectura – Shipping & Packaging"
         },
         "description": {
-            "de-DE": "Versand-, Verpackungs- und Servicekosten je Zone und Versandquelle, Zustelltermine, Einkaufskosten und Deckung sowie Sendungsnummern aus Lieferanten-Dateien und Versandmails.",
-            "en-GB": "Shipping, packaging and service costs per zone and shipping source, delivery dates, purchase costs and coverage, and tracking numbers from supplier files and shipping emails."
+            "de-DE": "(in Entwicklung) Geplant: Versand-, Verpackungs- und Servicekosten je Zone und Versandquelle, Zustelltermine, Einkaufskosten und Deckung sowie Sendungsnummern aus Lieferanten-Dateien und Versandmails.",
+            "en-GB": "(in development) Planned: shipping, packaging and service costs per zone and shipping source, delivery dates, purchase costs and coverage, and tracking numbers from supplier files and shipping emails."
         },
         "manufacturerLink": {
             "de-DE": "https://www.lohndruckerei.eu",

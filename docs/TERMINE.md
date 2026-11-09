@@ -55,17 +55,28 @@ Position nur Lieferanten ohne 0,5 AT, wird 0,5 AT nicht angeboten bzw. mit Grund
 Bezugszeit       = jetzt (Europe/Berlin) – Bestellung UND Druckdaten müssen da sein
 Produktionsstart = heute, wenn Arbeitstag und Bezugszeit < Annahmeschluss des Profils,
                    sonst nächster Arbeitstag der Quelle
-Versandtag       = Produktionsstart + (Produktionstage − 1) Arbeitstage
-                   (0,5 AT: Versand am Starttag, sofern vor Versandschluss)
+Versandtag       = Produktionsstart + Produktionstage Arbeitstage (Kalender der Quelle)
+                   Ausnahme 0,5 AT: Versand am Starttag (gleicher Tag), sofern vor Versandschluss
 Zustellung       = Versandtag + Laufzeit {min, max} je Zone in Arbeitstagen des Carriers
+                   (Feiertage am Zielort, z. B. AT: noch offen, Frage 6)
 Countdown        = Annahmeschluss heute − jetzt (nur wenn heute noch gilt; sonst Countdown bis
                    Annahmeschluss des nächsten Arbeitstags und Hinweis „ab jetzt zählt Montag“)
-Sendung          = späteste Position der Quelle; Bestellung = späteste Sendung
+Sendung          = späteste Position der Quelle
+Bestellung       = späteste Sendung – nur Gesamtinfo und Rückfall; Lieferanten bekommen den Termin ihrer Positionen
 ```
+
+Versandtag je Produktionszeit bei Produktionsstart Mo (vor Annahmeschluss, keine Feiertage):
+
+| Produktionszeit | Versandtag |
+|---|---|
+| 0,5 AT | Mo (gleicher Tag, Ausnahme) |
+| 1 AT | Di |
+| 2 AT | Mi |
+| 5 AT | Mo der Folgewoche |
 
 Beispiel intern, Folie 0,5 AT, Annahmeschluss 11:00, Laufzeit DE 1 AT:
 Bestellung Mo 10:20 → Countdown 40 min → Versand Mo → Zustellung Di. Bestellung Mo 11:05 → Start Di → Versand Di →
-Zustellung Mi.
+Zustellung Mi. Zum Vergleich 1 AT, Annahmeschluss 11:30: Bestellung Mo 11:05 → Start Mo → Versand Di → Zustellung Mi.
 
 ## 5. Anzeige im Shop (Storefront-Theme, Frontend-Bereich)
 
@@ -91,8 +102,10 @@ Zustellung Mi.
 | `reschedule(orderId, dates, reason)` – manuell (Maschinenausfall, Lieferant meldet Verzug) | neuer Termin + Verlauf; Event `vectura.schedule.changed` |
 | Sendung erfasst (Abschnitt Sendungen) | Status `shipped`, tatsächlicher Versandtag; Zustellung aus Laufzeit |
 
-- Neue Termine werden an **LieferLotse** weitergegeben (`ld_delivery_date` der Bestellung), wenn noch nicht beim
-  Lieferanten bestellt; sonst nur Hinweis im Admin.
+- Neue Termine werden an **LieferLotse** weitergegeben, wenn noch nicht beim Lieferanten bestellt; sonst nur Hinweis
+  im Admin. Maßgeblich für einen Lieferanten ist der Termin **seiner Positionen** (`payload.ldDeliveryDate`);
+  LieferLotse verwendet diesen **vor** dem Bestelltermin. `ld_delivery_date` der Bestellung setzt
+  Vectura auf den spätesten Termin, nur als Gesamtinfo und Rückfall für Positionen ohne eigenen Termin.
 - Admin-API für das Workflow-Plugin: `POST /api/_action/ld-vectura/schedule/{orderId}/{confirm|hold|resume|reschedule}`
   sowie PHP-Service `ScheduleService`. Rechte: `ld_vectura.schedule`.
 
@@ -114,3 +127,5 @@ Zustellung Mi.
 4. Wenn Positionen einer Bestellung unterschiedliche Produktionszeiten haben: gemeinsam versenden (Standard) oder
    Teillieferung anbieten?
 5. Soll der Kunde bei einem verschobenen Termin aktiv zustimmen müssen (z. B. bei Express-Aufschlag → Erstattung)?
+6. Gelten für die Laufzeit die Feiertage am **Zielort** (z. B. AT, andere Bundesländer) oder nur die des Kalenders
+   der Quelle bzw. des Carriers?
