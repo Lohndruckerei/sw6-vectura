@@ -1,4 +1,4 @@
-import{T as r}from"./ld-vectura-DQOk9lU1.js";const o={template:`
+import{T as r}from"./ld-vectura-D-0r_CTT.js";const o={template:`
 <lv-chip
     :label="label"
     :color="config.color"

@@ -1,4 +1,4 @@
-import{C as l}from"./ld-vectura-DQOk9lU1.js";const i={template:`
+import{C as l}from"./ld-vectura-D-0r_CTT.js";const i={template:`
 <span
     class="lv-chip"
     :style="{ '--lv-t': 'var(--lv-' + color + ')' }"

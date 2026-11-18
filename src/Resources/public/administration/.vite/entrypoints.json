@@ -3,17 +3,17 @@
   "entryPoints": {
     "ld-vectura": {
       "css": [
-        "/bundles/ldvectura/administration/assets/ld-vectura-Cnz7TI3O.css"
+        "/bundles/ldvectura/administration/assets/ld-vectura-B4QTg8LQ.css"
       ],
       "dynamic": [
-        "/bundles/ldvectura/administration/assets/index-B8h-teJw.js",
-        "/bundles/ldvectura/administration/assets/index-BnTLg5zX.js",
-        "/bundles/ldvectura/administration/assets/index-G_hQlATL.js",
-        "/bundles/ldvectura/administration/assets/index-B-haKkg3.js",
+        "/bundles/ldvectura/administration/assets/index-CHBoekQP.js",
+        "/bundles/ldvectura/administration/assets/index-B1eEGD08.js",
+        "/bundles/ldvectura/administration/assets/index-B4PG5J56.js",
+        "/bundles/ldvectura/administration/assets/index-DmmCbIO_.js",
         "/bundles/ldvectura/administration/assets/index-BCmmhgtT.js"
       ],
       "js": [
-        "/bundles/ldvectura/administration/assets/ld-vectura-DQOk9lU1.js"
+        "/bundles/ldvectura/administration/assets/ld-vectura-D-0r_CTT.js"
       ],
       "legacy": false,
       "preload": []
